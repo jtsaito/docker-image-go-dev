@@ -12,6 +12,6 @@ Then run `make build` to build the Docker image.
 Create and run a container: `make run`. (This will
 start up the container in the background.)
 
-Run `make start` to start an interactive shell.
+Run `make shell` to start an interactive shell on the container.
 
 To terminate run `make stoprm`. This will also remove the container.

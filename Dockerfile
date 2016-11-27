@@ -6,7 +6,7 @@ RUN apt-get update
 
 # projects
 RUN mkdir -p /projects
-WORKDIR /projectcs
+WORKDIR /projects
 
 
 # tools
@@ -37,6 +37,7 @@ ENV GOPATH=/projects
 ENV PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 RUN wget https://storage.googleapis.com/golang/go1.7.linux-amd64.tar.gz
 RUN tar -xvf go1.7.linux-amd64.tar.gz
+RUN rm go1.7.linux-amd64.tar.gz
 RUN mv go /usr/local
 
 
