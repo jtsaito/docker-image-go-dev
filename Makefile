@@ -14,7 +14,7 @@ push:
 deploy: build push
 
 run:
-	docker run -d --name $(SHORT_NAME) $(IMAGE)
+	docker run -d --tty --name $(SHORT_NAME) $(IMAGE)
 
 dev-run:
 	docker exec -it $(IMAGE) "/bin/bash"

@@ -30,6 +30,10 @@ RUN git clone https://github.com/fatih/vim-go.git ~/.vim/bundle/vim-go
 # https://github.com/scrooloose/nerdtree
 RUN git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
 
+# vim.ack
+RUN apt-get install -y ack-grep
+RUN git clone https://github.com/mileszs/ack.vim.git ~/.vim/bundle/ack.vim
+
 
 # setup git config
 # COPY .gitconfig /root/.gitconfig
