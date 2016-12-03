@@ -6,7 +6,7 @@ SHORT_NAME=go-dev
 
 # production
 build:
-	docker build -f Dockerfile -t $(IMAGE) .
+	docker build --no-cache=true -f Dockerfile -t $(IMAGE) .
 
 push:
 	docker push $(IMAGE)

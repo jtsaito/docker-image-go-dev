@@ -10,7 +10,7 @@ WORKDIR /projects
 
 
 # tools
-RUN apt-get -y install wget curl git
+RUN apt-get -y install wget curl git make
 
 
 # vim 8.0
@@ -47,6 +47,9 @@ RUN wget https://storage.googleapis.com/golang/go1.7.linux-amd64.tar.gz
 RUN tar -xvf go1.7.linux-amd64.tar.gz
 RUN rm go1.7.linux-amd64.tar.gz
 RUN mv go /usr/local
+
+# golang tools
+RUN go get github.com/golang/lint/golint
 
 
 # start up
