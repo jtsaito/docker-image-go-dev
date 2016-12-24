@@ -15,3 +15,10 @@ start up the container in the background.)
 Run `make shell` to start an interactive shell on the container.
 
 To terminate run `make stoprm`. This will also remove the container.
+
+
+## Remarks on VIM Plugins
+
+### Neocomplete
+We use [neocomplete](https://github.com/Shougo/neocomplete.vim) for auto completion.
+Run `<C-x><C-o>` auto-completing (on a string in normal mode).
