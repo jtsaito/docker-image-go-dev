@@ -80,6 +80,14 @@ RUN mkdir -p /run
 COPY ./start.sh /run
 
 
+# Terraform - uncomment to include terraform
+# RUN wget https://releases.hashicorp.com/terraform/0.8.2/terraform_0.8.2_linux_amd64.zip
+# ENV TERRAFORMPATH=/var/terraform
+# RUN mkdir $TERRAFORMPATH
+# RUN unzip terraform_0.8.2_linux_amd64.zip -d $TERRAFORMPATH && rm terraform_0.8.2_linux_amd64.zip
+# ENV PATH=$PATH:$TERRAFORMPATH
+
+
 # The main command to run when the container starts. Also
 # tell the Rails dev server to bind to all interfaces by
 # default.
