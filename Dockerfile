@@ -88,6 +88,11 @@ COPY ./start.sh /run
 # ENV PATH=$PATH:$TERRAFORMPATH
 
 
+# COPY SSH key - uncomment if needed; watch out here!
+# COPY  ~/.ssh/id_rsa /root/.ssh
+# COPY  ~/.ssh/id_rsa.pub /root/.ssh
+
+
 # The main command to run when the container starts. Also
 # tell the Rails dev server to bind to all interfaces by
 # default.
