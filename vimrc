@@ -67,6 +67,9 @@ set softtabstop=0 noexpandtab
 set smarttab
 
 
+" minor stuff
 syntax on
+set hlsearch
 filetype plugin indent on
+
 set paste
