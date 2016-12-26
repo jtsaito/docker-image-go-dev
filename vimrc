@@ -59,6 +59,13 @@ au FileType go nmap <leader>c <Plug>(go-coverage)
 let g:go_fmt_command = "goimports"
 
 
+
+" tabs
+set shiftwidth=2
+set tabstop=2
+set softtabstop=0 noexpandtab
+
+
 syntax on
 filetype plugin indent on
 set paste
