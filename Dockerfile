@@ -62,13 +62,16 @@ RUN git clone https://github.com/fatih/vim-go.git ~/.vim/bundle/vim-go
 # https://github.com/scrooloose/nerdtree
 RUN git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
 
-# vim.ack
+# vim.ack (full-text search)
 RUN apt-get install -y ack-grep
 RUN git clone https://github.com/mileszs/ack.vim.git ~/.vim/bundle/ack.vim
 
-# vim.ack
+# neocomplete (auto complete)
 # https://github.com/Shougo/neocomplete.vim
 RUN git clone https://github.com/Shougo/neocomplete.vim ~/.vim/bundle/neocomplete.vim
+
+# vim.airline (status bar)
+RUN git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
 
 
 # setup git config
