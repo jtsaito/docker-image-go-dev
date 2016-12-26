@@ -64,6 +64,7 @@ let g:go_fmt_command = "goimports"
 set shiftwidth=2
 set tabstop=2
 set softtabstop=0 noexpandtab
+set smarttab
 
 
 syntax on
