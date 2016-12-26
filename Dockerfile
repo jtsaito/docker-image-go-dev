@@ -72,6 +72,7 @@ RUN git clone https://github.com/Shougo/neocomplete.vim ~/.vim/bundle/neocomplet
 
 # vim.airline (status bar)
 RUN git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
+RUN git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-airline-themes
 
 
 # setup git config
