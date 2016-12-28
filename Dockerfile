@@ -87,17 +87,12 @@ RUN mkdir -p /run
 COPY ./start.sh /run
 
 
-# Terraform - uncomment to include terraform
-# RUN wget https://releases.hashicorp.com/terraform/0.8.2/terraform_0.8.2_linux_amd64.zip
-# ENV TERRAFORMPATH=/var/terraform
-# RUN mkdir $TERRAFORMPATH
-# RUN unzip terraform_0.8.2_linux_amd64.zip -d $TERRAFORMPATH && rm terraform_0.8.2_linux_amd64.zip
-# ENV PATH=$PATH:$TERRAFORMPATH
-
-
-# COPY SSH key - uncomment if needed; watch out here!
-# COPY  ~/.ssh/id_rsa /root/.ssh
-# COPY  ~/.ssh/id_rsa.pub /root/.ssh
+# Terraform - comment if not needed
+RUN wget https://releases.hashicorp.com/terraform/0.8.2/terraform_0.8.2_linux_amd64.zip
+ENV TERRAFORMPATH=/var/terraform
+RUN mkdir $TERRAFORMPATH
+RUN unzip terraform_0.8.2_linux_amd64.zip -d $TERRAFORMPATH && rm terraform_0.8.2_linux_amd64.zip
+ENV PATH=$PATH:$TERRAFORMPATH
 
 
 # The main command to run when the container starts. Also
