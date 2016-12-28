@@ -58,6 +58,9 @@ COPY vimrc /root/.vimrc
 # https://github.com/fatih/vim-go
 RUN git clone https://github.com/fatih/vim-go.git ~/.vim/bundle/vim-go
 
+# fugative
+RUN git clone https://github.com/tpope/vim-fugitive.git ~/.vim/bundle/vim-fugitive
+
 # nerdtree
 # https://github.com/scrooloose/nerdtree
 RUN git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
@@ -73,6 +76,9 @@ RUN git clone https://github.com/Shougo/neocomplete.vim ~/.vim/bundle/neocomplet
 # vim.airline (status bar)
 RUN git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
 RUN git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-airline-themes
+
+RUN git clone https://github.com/powerline/fonts.git ~/.vim/fonts
+RUN ~/.vim/fonts/install.sh
 
 # ctrlp.vim (finding files)
 RUN git clone https://github.com/kien/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim

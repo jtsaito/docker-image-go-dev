@@ -69,6 +69,8 @@ let g:go_metalinter_autosave = 1
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+" Powerline symbols for Airline
+let g:airline_powerline_fonts = 1
 
 " tabs
 set shiftwidth=2
