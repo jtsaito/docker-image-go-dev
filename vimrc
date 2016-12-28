@@ -59,6 +59,10 @@ au FileType go nmap <leader>c <Plug>(go-coverage)
 let g:go_fmt_command = "goimports"
 
 
+" Airline
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 " tabs
 set shiftwidth=2
