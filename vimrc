@@ -55,8 +55,14 @@ au FileType go nmap <Leader>t <Plug>(go-test)
 au FileType go nmap gd <Plug>(go-def-tab)
 au FileType go nmap <leader>c <Plug>(go-coverage)
 
+
+" fine tuning go-vim
+
 " cleanup go imports on save
 let g:go_fmt_command = "goimports"
+let g:go_metalinter_autosave = 1
+
+" always run metalint on save
 
 
 " Airline
@@ -75,5 +81,3 @@ set smarttab
 syntax on
 set hlsearch
 filetype plugin indent on
-
-set paste
