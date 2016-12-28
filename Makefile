@@ -16,11 +16,9 @@ deploy: build push
 run:
 	docker run -d --tty --name $(SHORT_NAME) $(IMAGE)
 
-dev-run:
-	docker exec -it $(IMAGE) "/bin/bash"
-
+# known ttyp work-around, support 256 colors
 shell:
-	docker exec -it $(SHORT_NAME) "/bin/bash"
+	docker exec -it $(SHORT_NAME) env TERM=xterm-256color script -q -c /bin/bash /dev/null
 
 stoprm:
 	docker stop $(SHORT_NAME) && docker rm $(SHORT_NAME)
