@@ -22,3 +22,8 @@ To terminate run `make stoprm`. This will also remove the container.
 ### Neocomplete
 We use [neocomplete](https://github.com/Shougo/neocomplete.vim) for auto completion.
 Run `<C-x><C-o>` auto-completing (on a string in normal mode).
+
+## CPUs
+
+We recommend staring with multiple CPUs. On OS X start the `docker-machine` with `--virtualbox-cpu-count "-1"`.
+Check the `CPUs` attribute in `docker info`.

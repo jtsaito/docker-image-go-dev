@@ -23,7 +23,7 @@ RUN rm go1.7.linux-amd64.tar.gz
 RUN mv go /usr/local
 
 # Go tools
-RUN go get github.com/golang/lint/golint
+# RUN go get github.com/golang/lint/golint
 
 # Go tools for vim-go
 # run :GoUpdateBinaries in vim to update the installed binaries
@@ -99,6 +99,30 @@ ENV TERRAFORMPATH=/var/terraform
 RUN mkdir $TERRAFORMPATH
 RUN unzip terraform_0.8.2_linux_amd64.zip -d $TERRAFORMPATH && rm terraform_0.8.2_linux_amd64.zip
 ENV PATH=$PATH:$TERRAFORMPATH
+
+
+
+
+# Ruby
+
+# dependencies
+#RUN apt-get install -y autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev
+
+# rbenv
+#ENV RBENVINSTPATH=/root/.rbenv
+#RUN git clone https://github.com/rbenv/rbenv.git $RBENVINSTPATH
+#ENV PATH=$PATH:$RBENVINSTPATH
+#RUN echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> /root/.bashrc
+#RUN echo 'eval "$(rbenv init -)"' >> /root/.bashrc
+
+# ruby-build
+#RUN git clone https://github.com/rbenv/ruby-build.git /root/.rbenv/plugins/ruby-build
+
+# install ruby 2.2.5 as default
+RUN eval "$(rbenv init -)"
+# RUN rbenv install ruby 2.2.5
+# RUN rbenv global 2.2.5
+
 
 
 # The main command to run when the container starts. Also

@@ -14,11 +14,17 @@ push:
 deploy: build push
 
 run:
-	docker run -d --tty --name $(SHORT_NAME) $(IMAGE)
+	docker run -d --tty \
+	--volume /Users/jsaito/projects/babbel/terraform:/projects/src/github.com/hashicorp/terraform  \
+	--volume /Users/jsaito/projects/babbel/babbel.infrastructure:/projects/src/babbel.infrastructure \
+	--cpuset-cpus="0-3" \
+	--cpu-period=100000 \
+	--cpu-quota=400000 \
+	--name $(SHORT_NAME) $(IMAGE)
 
 # known ttyp work-around, support 256 colors
 shell:
 	docker exec -it $(SHORT_NAME) env TERM=xterm-256color script -q -c /bin/bash /dev/null
 
-stoprm:
-	docker stop $(SHORT_NAME) && docker rm $(SHORT_NAME)
+rm:
+	docker rm -f $(SHORT_NAME)
