@@ -13,13 +13,13 @@ WORKDIR /projects
 RUN apt-get -y install wget curl git make
 
 
-# golang 1.7
+# golang 1.8
 ENV GOROOT=/usr/local/go
 ENV GOPATH=/projects
 ENV PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-RUN wget https://storage.googleapis.com/golang/go1.7.linux-amd64.tar.gz
-RUN tar -xvf go1.7.linux-amd64.tar.gz
-RUN rm go1.7.linux-amd64.tar.gz
+RUN wget https://storage.googleapis.com/golang/go1.8.linux-amd64.tar.gz
+RUN tar -xvf go1.8.linux-amd64.tar.gz
+RUN rm go1.8.linux-amd64.tar.gz
 RUN mv go /usr/local
 
 # Go tools
@@ -91,15 +91,6 @@ COPY .gitconfig /root/.gitconfig
 # start up
 RUN mkdir -p /run
 COPY ./start.sh /run
-
-
-# Terraform - comment if not needed
-RUN wget https://releases.hashicorp.com/terraform/0.8.2/terraform_0.8.2_linux_amd64.zip
-ENV TERRAFORMPATH=/var/terraform
-RUN mkdir $TERRAFORMPATH
-RUN unzip terraform_0.8.2_linux_amd64.zip -d $TERRAFORMPATH && rm terraform_0.8.2_linux_amd64.zip
-ENV PATH=$PATH:$TERRAFORMPATH
-
 
 # The main command to run when the container starts. Also
 # tell the Rails dev server to bind to all interfaces by

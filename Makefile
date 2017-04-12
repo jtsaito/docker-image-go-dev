@@ -4,6 +4,8 @@ NAME=$(REPOSITORY)/go-dev
 IMAGE=$(NAME):$(DOCKER_IMAGE_VERSION)
 SHORT_NAME=go-dev-$(DOCKER_IMAGE_VERSION)
 
+MOUNT_VOLUME=/Users/jsaito/projects/docker_volumes/docker-image-go-dev
+
 # production
 build:
 	docker build --no-cache=true -f Dockerfile -t $(IMAGE) .
@@ -14,7 +16,7 @@ push:
 deploy: build push
 
 run:
-	docker run -d --tty --name $(SHORT_NAME) $(IMAGE)
+	docker run -d --tty --name $(SHORT_NAME) -v $(MOUNT_VOLUME):/vol $(IMAGE)
 
 # known ttyp work-around, support 256 colors
 shell:
