@@ -44,6 +44,9 @@ RUN go get github.com/josharian/impl
 RUN mkdir /projects/src/local
 
 
+
+# VIM
+
 # vim 8.2
 RUN add-apt-repository ppa:jonathonf/vim && apt-get update && apt-get install -y vim
 RUN apt-get install -y vim-nox
@@ -81,6 +84,13 @@ RUN ~/.vim/fonts/install.sh
 
 # ctrlp.vim (finding files)
 RUN git clone https://github.com/kien/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
+
+
+# AWS CLI
+
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+RUN unzip awscliv2.zip
+RUN ./aws/install
 
 
 # setup git config
