@@ -1,10 +1,10 @@
-DOCKER_IMAGE_VERSION?=0.0.3
+DOCKER_IMAGE_VERSION?=0.0.4
 REPOSITORY=502414664542.dkr.ecr.eu-west-1.amazonaws.com/jsaito
 NAME=$(REPOSITORY)/go-dev
 IMAGE=$(NAME):$(DOCKER_IMAGE_VERSION)
 SHORT_NAME=go-dev-$(DOCKER_IMAGE_VERSION)
 
-MOUNT_VOLUME=/Users/jsaito/projects/docker_volumes/docker-image-go-dev
+MOUNT_VOLUME = $(shell pwd)/volume
 
 # production
 build:
