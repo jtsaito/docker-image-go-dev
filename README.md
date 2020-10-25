@@ -3,7 +3,7 @@
 This repo contains a `Dockerfile` for generating an image for developing in *golang*
 using *vim* on *Ubuntu*.
 
-The current version is for Ubuntu 20.04 LTS, vim 8.1 and Go 1.15.
+The current version is for Ubuntu 20.04 LTS, vim 8.2 and Go 1.15.
 
 ## Container life cycle
 First, copy your git configuration into your working directory: `cp ~/.gitconfig ./.gitconfig`.
