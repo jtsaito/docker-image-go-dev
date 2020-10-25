@@ -93,6 +93,11 @@ RUN unzip awscliv2.zip
 RUN ./aws/install
 
 
+# Node.js
+ENV NODE_VERSION=12.9
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
+
+
 # setup git config
 COPY .gitconfig /root/.gitconfig
 
