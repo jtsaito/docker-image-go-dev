@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:20.04
 
 RUN apt-get update && apt-get install -y software-properties-common
 RUN add-apt-repository -y ppa:ubuntu-lxc/lxd-stable
@@ -13,13 +13,13 @@ WORKDIR /projects
 RUN apt-get -y install wget curl git make
 
 
-# golang 1.8
+# golang 1.15
 ENV GOROOT=/usr/local/go
 ENV GOPATH=/projects
 ENV PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-RUN wget https://storage.googleapis.com/golang/go1.8.linux-amd64.tar.gz
-RUN tar -xvf go1.8.linux-amd64.tar.gz
-RUN rm go1.8.linux-amd64.tar.gz
+RUN wget https://storage.googleapis.com/golang/go1.15.linux-amd64.tar.gz
+RUN tar -xvf go1.15.linux-amd64.tar.gz
+RUN rm go1.15.linux-amd64.tar.gz
 RUN mv go /usr/local
 
 # Go tools
@@ -44,8 +44,7 @@ RUN go get github.com/josharian/impl
 RUN mkdir /projects/src/local
 
 
-# vim 8.0
-# http://tipsonubuntu.com/2016/09/13/vim-8-0-released-install-ubuntu-16-04/
+# vim 8.2
 RUN add-apt-repository ppa:jonathonf/vim && apt-get update && apt-get install -y vim
 RUN apt-get install -y vim-nox
 
