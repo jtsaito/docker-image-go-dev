@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 
 RUN apt-get update && apt-get install -y software-properties-common
-RUN add-apt-repository -y ppa:ubuntu-lxc/lxd-stable
+# RUN add-apt-repository -y ppa:ubuntu-lxc/lxd-stable
 RUN apt-get update
 
 # projects
@@ -23,7 +23,7 @@ RUN rm go1.15.linux-amd64.tar.gz
 RUN mv go /usr/local
 
 # Go tools
-RUN go get github.com/golang/lint/golint
+RUN go get -u golang.org/x/lint/golint
 
 # Go tools for vim-go
 # run :GoUpdateBinaries in vim to update the installed binaries
