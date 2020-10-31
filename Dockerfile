@@ -10,7 +10,18 @@ WORKDIR /projects
 
 
 # tools
-RUN apt-get -y install wget curl git make
+RUN apt-get -y install wget curl git make openssh-server
+
+
+# ssh
+# default ssh user password (define value in .env file)
+ARG SSH_PASS=dontusethisdefault
+ARG SSH_AUTHORIZED_KEYS=authorized_keys
+ARG SSH_USER=lupin
+
+RUN useradd -m -s /bin/bash -p $(openssl passwd -1 $SSH_PASS) $SSH_USER
+RUN mkdir /root/.ssh
+COPY authorized_keys /root/.ssh/authorized_keys
 
 
 # golang 1.15
